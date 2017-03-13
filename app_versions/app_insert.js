@@ -59,7 +59,7 @@ csv
     });
 
     //Creating query
-    var qry_cnt = "SELECT count(1) AS num,count(statecode) AS state from csv where policyID=";
+    var qry_cnt = "SELECT count(1) AS num from csv where policyID=";
     qry_cnt=qry_cnt+data.policyID;
 
     con.query(qry_cnt,function(err,rows){
@@ -67,7 +67,6 @@ csv
 
 
      console.log(rows[0].num);
-     console.log(rows[0].state);
      //Insert
      //Check if no record
      if(rows[0].num<1){
